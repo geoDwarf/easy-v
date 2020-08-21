@@ -13,17 +13,13 @@ public class PointsCollection {
     @Autowired
     public PointsCollection(ArrayList<Point> points) {
         this.points=points;
-        Point point1 = new Point();
-        Point point2 = new Point();
-        point1.setX("12");
-        point1.setY("42");
-        point2.setX("11");
-        point2.setY("42");
-        points.add(point1);
-        points.add(point2);
     }
 
     public ArrayList<Point> getPoints() {
         return points;
+    }
+
+    public void setPoints(ArrayList<Point> points) {
+        this.points = points;
     }
 }

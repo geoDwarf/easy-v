@@ -1,6 +1,7 @@
 package com.geodwarf.controller;
 
 import com.geodwarf.models.Point;
+import com.geodwarf.models.PointsCollection;
 import com.geodwarf.services.FeaturesService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -15,7 +16,7 @@ public class FeaturesController {
     FeaturesService featuresService;
 
     @GetMapping("/getpoints")
-    public ArrayList<Point> getPoints(){
+    public PointsCollection getPoints(){
         return featuresService.getPointsCollection();
     }
 }

@@ -1,5 +1,6 @@
 package com.geodwarf.services;
 
+import com.geodwarf.dao.PointDao;
 import com.geodwarf.models.Point;
 import com.geodwarf.models.PointsCollection;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -13,8 +14,13 @@ public class FeaturesService {
     @Autowired
     private PointsCollection pointsCollection;
 
-    public ArrayList<Point> getPointsCollection() {
+    @Autowired
+    private PointDao pointDao;
 
-        return pointsCollection.getPoints();
+    public PointsCollection getPointsCollection() {
+        ArrayList<Point> points = (ArrayList<Point>) pointDao.findAll();
+        pointsCollection.setPoints(points);
+        return pointsCollection;
+
     }
 }

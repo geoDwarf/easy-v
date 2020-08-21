@@ -1,8 +1,15 @@
 package com.geodwarf.models;
 
+import javax.persistence.Entity;
+import javax.persistence.Id;
+
+
+@Entity
 public class Point {
     private String x ;
     private String y ;
+    @Id
+    public String pointId;
 
     public String getX() {
         return x;
@@ -18,5 +25,9 @@ public class Point {
 
     public void setY(String y) {
         this.y = y;
+    }
+
+    public void setPointId(String pointId) {
+        this.pointId = pointId;
     }
 }
