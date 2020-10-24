@@ -8,6 +8,11 @@ import javax.persistence.Id;
 public class Point {
     private String x ;
     private String y ;
+
+    public Point(String x, String y){
+        this.x = x;
+        this.y = y;
+    }
     @Id
     public String pointId;
 

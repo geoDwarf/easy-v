@@ -16,7 +16,7 @@ public class FeaturesController {
     FeaturesService featuresService;
 
     @GetMapping("/getpoints")
-    public PointsCollection getPoints(){
+    public ArrayList<Point> getPoints(){
         return featuresService.getPointsCollection();
     }
 }

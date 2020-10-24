@@ -30,6 +30,7 @@ public class FeaturesServiceTest {
         //when
         featuresService.getPointsCollection();
         //then
+
         verify(pointsCollection,times(1)).getPoints();
         assertThat(pointsCollection.getPoints(), instanceOf(ArrayList.class));
 

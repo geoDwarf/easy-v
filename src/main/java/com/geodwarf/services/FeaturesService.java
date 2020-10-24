@@ -17,10 +17,11 @@ public class FeaturesService {
     @Autowired
     private PointDao pointDao;
 
-    public PointsCollection getPointsCollection() {
-        ArrayList<Point> points = (ArrayList<Point>) pointDao.findAll();
-        pointsCollection.setPoints(points);
-        return pointsCollection;
+    public ArrayList<Point> getPointsCollection() {
+        //ArrayList<Point> points = (ArrayList<Point>) pointDao.findAll();
+        //pointsCollection.setPoints(points);
+
+        return pointsCollection.getPoints();
 
     }
 }
