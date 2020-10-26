@@ -12,9 +12,11 @@ public class AppConfiguration {
     @Bean
     public ArrayList<Point> getPoints(){
         ArrayList<Point> points = new ArrayList<>();
-        points.add(new Point("3", "55"));
-        points.add(new Point("5", "77"));
-        points.add(new Point("42","12"));
+        points.add(new Point("12.09", "42.0505"));
+        points.add(new Point("12.55", "42.16"));
+        points.add(new Point("12.31", "42.40"));
+        points.add(new Point("0.12", "52.20"));
+        points.add(new Point("0","0"));
         return points;
     }
 

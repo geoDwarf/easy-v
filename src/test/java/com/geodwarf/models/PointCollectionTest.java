@@ -5,7 +5,6 @@ import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
-
 import java.util.ArrayList;
 import static org.junit.Assert.assertTrue;
 
@@ -16,9 +15,10 @@ public class PointCollectionTest {
     @Autowired
     private PointsCollection pointsCollection;
 
-    Point pointExpectedOne = new Point("3", "55");
-    Point pointExpectedTwo = new Point("5", "77");
-    Point pointExpectedThree = new Point ("42","12");
+    Point pointExpectedOne = new Point("12.09", "42.0505");
+    Point pointExpectedTwo = new Point("12.55", "42.16");
+    Point pointExpectedThree = new Point("12.31", "42.40");
+
 
     @Test
     public void pointCollectionInitializationTest(){
