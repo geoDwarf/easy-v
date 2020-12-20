@@ -1,1 +1,1 @@
-web: java -jar easy-v-1.0-SNAPSHOT.jar
+web: java -jar target/easy-v-1.0-SNAPSHOT.jar
