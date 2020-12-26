@@ -15,10 +15,10 @@ public class PointsCollection {
         this.points=points;
         Point point1 = new Point();
         Point point2 = new Point();
-        point1.setX("12");
-        point1.setY("42");
-        point2.setX("11");
-        point2.setY("42");
+        point1.setX("12.678");
+        point1.setY("42.990");
+        point2.setX("11.768");
+        point2.setY("42.006");
         points.add(point1);
         points.add(point2);
     }
