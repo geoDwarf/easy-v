@@ -16,6 +16,11 @@ public class FeaturesController {
 
     @GetMapping("/getpoints")
     public ArrayList<Point> getPoints(){
-        return featuresService.getPointsCollection();
+        return featuresService.getAllPoints();
+    }
+
+    @GetMapping("/prova")
+    public String prova(){
+        return "stringa prova";
     }
 }

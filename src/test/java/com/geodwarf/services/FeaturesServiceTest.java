@@ -1,7 +1,7 @@
 package com.geodwarf.services;
 
+import com.geodwarf.dao.PointDao;
 import com.geodwarf.models.Point;
-import com.geodwarf.models.PointsCollection;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.mockito.InjectMocks;
@@ -12,6 +12,7 @@ import java.util.ArrayList;
 
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.Matchers.instanceOf;
+import static org.junit.jupiter.api.Assertions.assertNull;
 import static org.mockito.Mockito.*;
 
 @RunWith(MockitoJUnitRunner.class)
@@ -21,17 +22,33 @@ public class FeaturesServiceTest {
     FeaturesService featuresService;
 
     @Mock
-    PointsCollection pointsCollection;
+    PointDao pointDao;
+
+    @Mock
+    ArrayList<Point> pointsCollection;
 
     @Test
     public void whenGetPointsIsCalledItReturnACollectionOfPoints() {
         //given
-
+        when(pointDao.findAll()).thenReturn(pointsCollection);
         //when
-        featuresService.getPointsCollection();
+        featuresService.getAllPoints();
         //then
-        verify(pointsCollection,times(1)).getPoints();
-        assertThat(pointsCollection.getPoints(), instanceOf(ArrayList.class));
+        verify(pointDao,times(1)).findAll();
+        assertThat(featuresService.getAllPoints(), instanceOf(ArrayList.class));
+
+    }
+
+
+    @Test
+    public void whenGetPointsIsCalledAndReturnsANullCollection() {
+        //given
+        when(pointDao.findAll()).thenReturn(null);
+        //when
+        featuresService.getAllPoints();
+        //then
+        verify(pointDao,times(1)).findAll();
+        assertNull(featuresService.getAllPoints());
 
     }
 }

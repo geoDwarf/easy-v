@@ -1,7 +1,6 @@
 package com.geodwarf.controller;
 
 
-import com.geodwarf.models.PointsCollection;
 import com.geodwarf.services.FeaturesService;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -29,6 +28,6 @@ public class FeaturesControllerTest {
         //when
         featuresController.getPoints();
         //then
-        verify(featuresService,times(1)).getPointsCollection();
+        verify(featuresService,times(1)).getAllPoints();
     }
 }

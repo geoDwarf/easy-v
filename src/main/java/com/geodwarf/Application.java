@@ -17,7 +17,10 @@ import javax.annotation.PostConstruct;
 @RestController
 @SpringBootApplication
 @ComponentScan(basePackages ={
-"com.geodwarf.dao", "com.geodwarf.utils"})
+                                "com.geodwarf.dao",
+                                "com.geodwarf.utils",
+                                "com.geodwarf.controller" ,
+                                "com.geodwarf.services"})
 public class Application
 {
 
