@@ -33,7 +33,6 @@ public class Application
         SpringApplication.run(Application.class, args);
     }
 
-
     @PostConstruct
     public void initDB(){
         dataInit.init();

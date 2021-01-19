@@ -11,7 +11,7 @@ import org.springframework.stereotype.Component;
 import java.util.ArrayList;
 import java.util.Arrays;
 
-//TODO think about make it more generic (e.g. if we need to convert point coordinates)
+//TODO think about make it more generic (e.g. if we need to convert point coordinates, at the moment it just converts string KML coordinates in to  geoJson string array)
 
 @Component
 public class ConverterService {

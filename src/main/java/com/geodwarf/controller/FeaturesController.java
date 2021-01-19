@@ -1,5 +1,6 @@
 package com.geodwarf.controller;
 
+import com.geodwarf.models.LineString;
 import com.geodwarf.models.Point;
 import com.geodwarf.services.FeaturesService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -17,6 +18,11 @@ public class FeaturesController {
     @GetMapping("/getpoints")
     public ArrayList<Point> getPoints(){
         return featuresService.getAllPoints();
+    }
+
+    @GetMapping("/getlinestrings")
+    public ArrayList<LineString> getLineStrings(){
+        return featuresService.getAllLineString();
     }
 
     @GetMapping("/prova")

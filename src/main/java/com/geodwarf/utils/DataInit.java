@@ -1,18 +1,26 @@
 package com.geodwarf.utils;
 
+import com.geodwarf.dao.LineStringDao;
 import com.geodwarf.dao.PointDao;
+import com.geodwarf.models.LineString;
 import com.geodwarf.models.Point;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
+
+import java.util.HashSet;
+import java.util.Set;
 
 @Component
 public class DataInit {
 
     private PointDao pointDao;
+    private LineStringDao lineStringDao;
+
 
     @Autowired
-    public DataInit(PointDao pointDao){
+    public DataInit(PointDao pointDao, LineStringDao lineStringDao){
         this.pointDao = pointDao;
+        this.lineStringDao = lineStringDao;
     }
 
     public void init(){
@@ -48,6 +56,33 @@ public class DataInit {
         pointDao.save(point6);
         pointDao.save(point7);
 
+        initLineStrings();
+    }
 
+    private void initLineStrings(){
+
+
+
+        Set<Point> pointSet = new HashSet<>();
+        Point stringPoint = new Point();
+        Point stringPoint2 = new Point();
+
+        stringPoint.setX("12.678");
+        stringPoint.setY("42.990");
+        stringPoint2.setX("11.768");
+        stringPoint2.setY("42.006");
+
+
+        pointSet.add(stringPoint);
+        pointSet.add(stringPoint2);
+        LineString lineString1 = new LineString();
+        stringPoint2.setLineString(lineString1);
+        stringPoint.setLineString(lineString1);
+        lineString1.setPoints(pointSet);
+
+        lineStringDao.save(lineString1);
+        lineStringDao.findAll();
+        lineStringDao.findById(8);
+        System.out.println("data init linestring id:  "+lineString1.getLinestringId());
     }
 }
