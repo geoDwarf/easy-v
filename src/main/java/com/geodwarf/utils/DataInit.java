@@ -16,6 +16,8 @@ import org.springframework.stereotype.Component;
 import java.io.File;
 import java.io.FileReader;
 import java.io.IOException;
+import java.io.InputStream;
+import java.io.InputStreamReader;
 import java.util.HashSet;
 import java.util.Iterator;
 import java.util.Set;
@@ -99,9 +101,9 @@ public class DataInit {
 
     private JSONObject readDefaultJson() throws IOException, ParseException {
         Resource resource = new ClassPathResource("lineStringDefault.json");
-        File file = resource.getFile();
+        InputStream inputStream = resource.getInputStream();
         JSONParser parser = new JSONParser();
-        Object obj = parser.parse(new FileReader(file));
+        Object obj = parser.parse(new InputStreamReader(inputStream));
         JSONObject jsonObject = (JSONObject) obj;
 
         return jsonObject;
