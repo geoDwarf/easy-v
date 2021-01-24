@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import javax.annotation.PostConstruct;
+import java.io.IOException;
 
 
 @RestController
@@ -34,7 +35,7 @@ public class Application
     }
 
     @PostConstruct
-    public void initDB(){
+    public void initDB() throws IOException {
         dataInit.init();
 }
 

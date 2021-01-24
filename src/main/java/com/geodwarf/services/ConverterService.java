@@ -96,7 +96,6 @@ public class ConverterService {
              }
              outArray.add(tempArray);
          }
-        logger.info("KML coordinates converted for Json format: " +outArray.toString());
         return outArray;
 
     }
