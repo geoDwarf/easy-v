@@ -6,7 +6,6 @@ import com.fasterxml.jackson.annotation.ObjectIdGenerators;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
@@ -31,6 +30,16 @@ public class Point {
     @JsonIdentityReference(alwaysAsId = true)
     @JoinColumn(name="linestring_id", nullable=true)
     private LineString lineString;
+
+    public Point(String x, String y ){
+        this.x = x;
+        this.y = y;
+    }
+
+    //TODO Find how to keep a no parameter constructor
+    public Point(){
+
+    }
 
     public String getX() {
         return x;
