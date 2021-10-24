@@ -20,7 +20,7 @@ public class FeaturesService {
     public ArrayList<Point> getPointsCollection() {
         //ArrayList<Point> points = (ArrayList<Point>) pointDao.findAll();
         //pointsCollection.setPoints(points);
-
+        Long longo = 3455L;
         return pointsCollection.getPoints();
 
     }

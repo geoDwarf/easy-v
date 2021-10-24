@@ -1,6 +1,5 @@
 package com.geodwarf.services;
 
-import com.geodwarf.models.Point;
 import com.geodwarf.models.PointsCollection;
 import org.junit.Test;
 import org.junit.runner.RunWith;
